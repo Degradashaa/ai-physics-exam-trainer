@@ -55,3 +55,11 @@ python scripts/validate_data.py
 ## 6. Тесты
 
 pytest tests/ -q
+
+## Пример .env
+
+GROQ_API_KEY=Ваш API
+GROQ_MODEL=Ваша модель
+TEMPERATURE=0.3
+MAX_TOKENS=1024
+VERIFIER_ENABLED=true
