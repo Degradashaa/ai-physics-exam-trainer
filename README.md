@@ -1,21 +1,57 @@
 # ИИ-тренажёр для подготовки к устному экзамену по физике
 
-Проверяет устный ответ студента по заранее заданной рубрике с помощью LLM (Groq).
-Возвращает баллы по критериям, список пропусков, ошибки и оценку.
+Проверяет устный ответ обучающегося по заранее заданной рубрике с помощью LLM (Groq). Возвращает баллы по критериям, список пропусков, ошибки и оценку.
 
-## Запуск
+## Требования
 
-1. `python -m venv .venv && source .venv/bin/activate`
-2. `pip install -r requirements.txt`
-3. Измените `.env.example` вставив туда свой API и название модели.
-4. `streamlit run frontend/streamlit_app.py`
+- Python 3.10+
+- API-ключ Groq
+- Название модели Groq
 
-## Проверка данных
+Все команды выполняются из корня проекта.
 
-`python scripts/validate_data.py`
+## 1. Виртуальное окружение
 
-## Тесты
+python -m venv .venv
 
-`pytest tests/ -q`
+Активация окружения:
 
-## Запуск - 'python -m streamlit run frontend/streamlit_app.py' в терминал.
+# Linux / macOS
+source .venv/bin/activate
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# Windows cmd
+.venv\Scripts\activate.bat
+
+## 2. Установка зависимостей
+
+pip install -r requirements.txt
+
+## 3. Настройка .env
+
+Скопируйте пример конфигурации:
+
+# Linux / macOS
+cp .env.example .env
+
+# Windows
+copy .env.example .env
+
+Заполните файл .env:
+
+GROQ_API_KEY=ваш_ключ
+GROQ_MODEL=название_модели
+
+## 4. Запуск приложения
+
+python -m streamlit run frontend/streamlit_app.py
+
+## 5. Проверка данных
+
+python scripts/validate_data.py
+
+## 6. Тесты
+
+pytest tests/ -q
